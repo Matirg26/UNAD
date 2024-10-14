@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLUVET - Accesorios</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        .accesorio img {
+            width: 200px; 
+            height: 200px; 
+            object-fit: cover; 
+        }
+
+        
+        .accesorios-container {
+            display: flex; 
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center; 
+            align-items: center; 
+            margin: 0 auto; 
+            max-width: 800px; 
+        }
+
+        .accesorio {
+            text-align: center; 
+        }
+
+        
+        .accesorios-section h2 {
+            text-align: center; 
+            margin-bottom: 20px;
+        }
+
+        
+        header {
+            text-align: center; 
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Img/logo.png" alt="Logo SOLUVET">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="Alimentos.html">Alimentos</a></li>
+                <li><a href="medicamentos.html">Medicamentos</a></li>
+                <li><a href="juguetes.html">Juguetes</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="accesorios-section">
+        <h2>Accesorios para Mascotas</h2>
+        <div class="accesorios-container">
+            
+            <div class="accesorio">
+                <img src="Img/Accesorios/Chal.jpg" alt="Accesorio 1">
+                <h3>Chaleco para Perros</h3>
+                <p class="price">$60000</p>
+                <button class="btn-cart">Agregar al Carrito</button>
+            </div>
+            
+            <div class="accesorio">
+                <img src="Img/Accesorios/rasca.jpg" alt="Accesorio 2">
+                <h3>Rascador para Gatos</h3>
+                <p class="price">$75000</p>
+                <button class="btn-cart">Agregar al Carrito</button>
+            </div>
+            
+            <div class="accesorio">
+                <img src="Img/Accesorios/pañ.jpg" alt="Accesorio 3">
+                <h3>Pañoletas para Perros</h3>
+                <p class="price">$25000</p>
+                <button class="btn-cart">Agregar al Carrito</button>
+            </div>
+            
+            <div class="accesorio">
+                <img src="Img/Accesorios/col.jpg" alt="Accesorio 4">
+                <h3>Collar para Gatos</h3>
+                <p class="price">$20000</p>
+                <button class="btn-cart">Agregar al Carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 ELIANA GARCIA - FASE 2 APLICACIONES MULTIMEDIA</p>
+    </footer>
+
+    <script src="cart.js"></script>
+    <script>
+        
+        const cartButtons = document.querySelectorAll('.btn-cart');
+
+        
+        cartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                
+                const accesorioName = button.previousElementSibling.previousElementSibling.textContent;
+                const accesorioPrice = parseFloat(button.previousElementSibling.textContent.replace('$', ''));
+
+            
+                const accesorio = {
+                    name: accesorioName,
+                    price: accesorioPrice
+                };
+
+        
+                addToCart(accesorio);
+                alert(`${accesorioName} ha sido agregado al carrito.`);
+            });
+        });
+    </script>
+</body>
+</html>
