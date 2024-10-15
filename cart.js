@@ -53,3 +53,35 @@ function removeFromCart(index) {
 
 
 document.addEventListener('DOMContentLoaded', renderCart);
+
+// JavaScript para el carrusel
+let currentIndex = 0;
+const images = document.querySelectorAll('.carousel img');
+const totalImages = images.length;
+
+function showImage(index) {
+    images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) {
+            img.classList.add('active');
+        }
+    });
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % totalImages;
+    showImage(currentIndex);
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    showImage(currentIndex);
+}
+
+// Cambiar imagen automáticamente cada 5 segundos
+setInterval(nextImage, 5000);
+
+// Controles manuales
+document.getElementById('next').addEventListener('click', nextImage);
+document.getElementById('prev').addEventListener('click', prevImage);
+
