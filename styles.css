@@ -91,28 +91,46 @@ nav ul li a:hover {
 }
 
 
+/* Estilo para la sección de servicios */
 .services-section {
-    padding: 50px;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-
-.services-section h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
+    padding: 20px; /* Espaciado interno */
+    text-align: center; /* Centrar el texto */
 }
 
 .service {
-    display: inline-block;
-    width: 30%;
-    margin: 0 1.5%;
-    vertical-align: top;
-    text-align: center;
+    margin: 15px; /* Espacio entre cada servicio */
+    padding: 10px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde para distinguir cada servicio */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: box-shadow 0.3s; /* Efecto de sombra al pasar el ratón */
 }
 
+/* Estilo para las imágenes */
 .service img {
-    width: 100px;
-    height: auto;
+    max-width: 100%; /* Hacer que la imagen sea responsiva */
+    height: auto; /* Mantener la proporción de la imagen */
+    border-radius: 5px; /* Bordes redondeados para las imágenes */
+}
+
+/* Media query para pantallas más grandes */
+@media (min-width: 768px) {
+    .services-section {
+        display: flex; /* Usar Flexbox para el diseño en pantallas grandes */
+        justify-content: space-around; /* Espacio entre servicios */
+        flex-wrap: wrap; /* Permitir que los servicios se envuelvan */
+    }
+
+    .service {
+        flex: 0 1 30%; /* Ajustar el ancho en pantallas grandes */
+    }
+}
+
+/* Media query para móviles */
+@media (max-width: 767px) {
+    .service {
+        flex: 1 1 100%; /* Cada servicio ocupa el 100% en móviles */
+        margin: 10px 0; /* Espacio vertical */
+    }
 }
 
 .service h3 {
