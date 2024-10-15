@@ -1,20 +1,3 @@
-@media (max-width: 768px) {
-    /* Cambiar el diseño de las secciones o servicios */
-    .services-section {
-        flex-direction: column; /* Cambiar a columna en móviles */
-    }
-
-    .service {
-        flex: 1 1 100%; /* Cada servicio ocupa el 100% en móviles */
-        margin: 10px 0; /* Espacio vertical */
-    }
-
-    /* Ajustar el tamaño del texto */
-    h1 {
-        font-size: 1.5rem; /* Ajustar el tamaño de texto */
-    }
-}
-
 body {
     overflow-x: hidden;
     font-family: Arial, sans-serif;
