@@ -12,7 +12,7 @@ header {
     justify-content: space-between; /* Espacio entre el logo y el menú */
     align-items: center;        /* Centrar elementos verticalmente */
     padding: 10px 20px;        /* Espaciado interno */
-    background-color: #fff;    /* Color de fondo */
+    background-color: #4CAF50;    /* Color de fondo */
 }
 
 /* Estilo para el logo */
