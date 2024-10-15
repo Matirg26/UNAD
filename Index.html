@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOLUVET</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS externo -->
 </head>
 <body>
     <!-- Header / Encabezado -->
@@ -14,22 +14,32 @@
         </div>
         <nav>
             <ul>
-                <li><a href="Alimentos.html">Alimentos</a></li>
-                <li><a href="Medicamentos.html">Medicamentos</a></li>
-                <li><a href="Juguetes.html">Juguetes</a></li>
-                <li><a href="Accesorios.html">Accesorios</a></li>
-                <li><a href="Carrito.html">Carro de Compras</a></li>
+                <li><a href="Alimentos.html" class="button-link">Alimentos</a></li>
+                <li><a href="Medicamentos.html" class="button-link">Medicamentos</a></li>
+                <li><a href="Juguetes.html" class="button-link">Juguetes</a></li>
+                <li><a href="Accesorios.html" class="button-link">Accesorios</a></li>
+                <li><a href="Carrito.html" class="button-link">Carro de Compras</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Sección principal -->
-    <section id="home">
-        <div class="main-banner">
-            <h1>Bienvenido a SOLUVET</h1>
-            <p>Soluciones con mucho amor para el cuidado de tus mascotas</p>
-        </div>
-    </section>
+    <!-- Banner interactivo con carrusel de imágenes -->
+<div class="carousel">
+    <div class="carousel-text">
+        <h1>Bienvenido a SOLUVET</h1>
+        <p>Soluciones con mucho amor para el cuidado de tus mascotas</p>
+    </div>
+
+    <img src="Img/Index/banner.png" alt="Imagen del banner 1" class="active">
+    <img src="Img/Index/banner1.jpg" alt="Imagen del banner 2">
+    <img src="Img/Index/banner2.jpg" alt="Imagen del banner 3">
+
+    <!-- Controles manuales (opcional) -->
+    <div class="carousel-controls">
+        <button id="prev">←</button>
+        <button id="next">→</button>
+    </div>
+</div>
 
     <!-- Servicios -->
     <section id="services" class="services-section">
@@ -78,5 +88,7 @@
     <footer>
         <p>© 2024 ELIANA GARCIA - FASE 2 APLICACIONES MULTIMEDIA</p>
     </footer>
+
+    <script src="cart.js"></script> <!-- Enlace al archivo JS externo -->
 </body>
 </html>
