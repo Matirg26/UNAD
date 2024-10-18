@@ -1,3 +1,4 @@
+/* Estilos generales */
 body {
     overflow-x: hidden;
     font-family: Arial, sans-serif;
@@ -6,61 +7,57 @@ body {
     box-sizing: border-box;
 }
 
-/* Estilos generales del encabezado */
+/* Encabezado */
 header {
-    display: flex;               /* Usar Flexbox para disposición */
-    justify-content: space-between; /* Espacio entre el logo y el menú */
-    align-items: center;        /* Centrar elementos verticalmente */
-    padding: 10px 20px;        /* Espaciado interno */
-    background-color: #4CAF50;    /* Color de fondo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #4CAF50;
 }
 
-/* Estilo para el logo */
 .logo img {
-    max-width: 100%;           /* Asegurar que el logo no exceda el ancho de su contenedor */
-    height: auto;              /* Mantener proporciones del logo */
+    max-width: 100%;
+    height: auto;
 }
 
-/* Estilos para el menú de navegación */
 nav ul {
-    display: flex;              /* Usar Flexbox para el menú */
-    list-style: none;          /* Eliminar viñetas */
-    padding: 0;                /* Sin padding */
-    margin: 0;                 /* Sin margin */
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* Estilos para los enlaces del menú */
 nav ul li {
-    margin: 0 10px;           /* Espaciado entre los elementos del menú */
+    margin: 0 10px;
 }
 
-nav ul li a {
-    display: inline-block;      /* Hacer que el enlace actúe como un botón */
-    padding: 10px 15px;        /* Espaciado interno de los enlaces */
-    background-color: #4CAF50; /* Color de fondo del botón */
-    color: white;              /* Color del texto */
-    text-decoration: none;      /* Sin subrayado */
-    border-radius: 5px;        /* Bordes redondeados */
-    transition: background-color 0.3s; /* Efecto de transición */
+.button-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-nav ul li a:hover {
-    background-color: #45a049; /* Color al pasar el ratón */
+.button-link:hover {
+    background-color: #45a049;
 }
 
-/* Media Query para móviles */
+/* Media Queries */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column;  /* Cambiar a una columna en pantallas pequeñas */
-        align-items: center;      /* Centrar los elementos */
+        flex-direction: column;
+        align-items: center;
     }
-
     nav ul li {
-        margin: 5px 0;           /* Espacio vertical entre los enlaces */
+        margin: 5px 0;
     }
 }
 
-
+/* Banner principal */
 .main-banner {
     background: url('Img/Index/Banner.png') no-repeat center center;
     background-size: cover;
@@ -78,72 +75,62 @@ nav ul li a:hover {
     font-size: 24px;
 }
 
-.btn-primary {
+/* Botones primarios */
+.btn-primary, .btn-cart, .btn-checkout {
     background-color: #FF9800;
     color: white;
     padding: 10px 20px;
-    text-decoration: none;
     border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.btn-primary:hover {
+.btn-primary:hover, .btn-cart:hover, .btn-checkout:hover {
     background-color: #E67E22;
 }
 
-
-/* Estilo para la sección de servicios */
+/* Servicios */
 .services-section {
-    padding: 20px; /* Espaciado interno */
-    text-align: center; /* Centrar el texto */
+    padding: 20px;
+    text-align: center;
 }
 
 .service {
-    margin: 15px; /* Espacio entre cada servicio */
-    padding: 10px; /* Espacio interno */
-    border: 1px solid #ccc; /* Borde para distinguir cada servicio */
-    border-radius: 8px; /* Bordes redondeados */
-    transition: box-shadow 0.3s; /* Efecto de sombra al pasar el ratón */
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
 }
 
-/* Estilo para las imágenes */
 .service img {
-    max-width: 100%; /* Hacer que la imagen sea responsiva */
-    height: auto; /* Mantener la proporción de la imagen */
-    border-radius: 5px; /* Bordes redondeados para las imágenes */
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
 }
 
-/* Media query para pantallas más grandes */
+/* Media query para servicios */
 @media (min-width: 768px) {
     .services-section {
-        display: flex; /* Usar Flexbox para el diseño en pantallas grandes */
-        justify-content: space-around; /* Espacio entre servicios */
-        flex-wrap: wrap; /* Permitir que los servicios se envuelvan */
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .service {
-        flex: 0 1 30%; /* Ajustar el ancho en pantallas grandes */
+        flex: 0 1 30%;
     }
 }
 
-/* Media query para móviles */
 @media (max-width: 767px) {
     .service {
-        flex: 1 1 100%; /* Cada servicio ocupa el 100% en móviles */
-        margin: 10px 0; /* Espacio vertical */
+        flex: 1 1 100%;
+        margin: 10px 0;
     }
 }
 
-.service h3 {
-    font-size: 20px;
-    margin-top: 10px;
-}
-
-.service p {
-    font-size: 16px;
-    color: #666;
-}
-
-
+/* Sobre nosotros */
 .about-section {
     padding: 50px;
     background-color: #fff;
@@ -159,423 +146,7 @@ nav ul li a:hover {
     color: #666;
 }
 
-
+/* Contacto */
 .contact-section {
     padding: 50px;
-    background-color: #f1f1f1;
-}
-
-.contact-section h2 {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.contact-section form {
-    width: 50%;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.contact-section label {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.contact-section input, .contact-section textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    font-size: 16px;
-}
-
-.contact-section button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.contact-section button:hover {
-    background-color: #45a049;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 50px;
-}
-
-footer p {
-    margin: 0;
-}
-
-.products-section {
-    padding: 50px;
-    text-align: center;
-}
-
-.products-section h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.products-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.product {
-    width: 30%;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.product img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.product h3 {
-    font-size: 20px;
-    margin-top: 15px;
-}
-
-.product .price {
-    font-size: 18px;
-    color: #4CAF50;
-    margin: 10px 0;
-}
-
-.btn-cart {
-    background-color: #FF9800;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-cart:hover {
-    background-color: #E67E22;
-}
-
-/* Sección de accesorios */
-.accessories-section {
-    padding: 50px;
-    text-align: center;
-}
-
-.accessories-section h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.accessories-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.accessory {
-    width: 45%;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.accessory img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.accessory h3 {
-    font-size: 20px;
-    margin-top: 15px;
-}
-
-.accessory .price {
-    font-size: 18px;
-    color: #4CAF50;
-    margin: 10px 0;
-}
-
-.btn-cart {
-    background-color: #FF9800;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-cart:hover {
-    background-color: #E67E22;
-}
-
-
-.medications-section {
-    padding: 50px;
-    text-align: center;
-}
-
-.medications-section h2 {
-
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.medications-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.medication {
-    width: 45%;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.medication img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.medication h3 {
-    font-size: 20px;
-    margin-top: 15px;
-}
-
-.medication .price {
-    font-size: 18px;
-    color: #4CAF50;
-    margin: 10px 0;
-}
-
-.btn-cart {
-    background-color: #FF9800;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-cart:hover {
-    background-color: #E67E22;
-}
-
-
-.toys-section {
-    padding: 50px;
-    text-align: center;
-}
-
-.toys-section h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-}
-
-.toys-container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.toy {
-    width: 45%;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.toy img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.toy h3 {
-    font-size: 20px;
-    margin-top: 15px;
-}
-
-.toy .price {
-    font-size: 18px;
-    color: #4CAF50;
-    margin: 10px 0;
-}
-
-.btn-cart {
-    background-color: #FF9800;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-cart:hover {
-    background-color: #E67E22;
-}
-
-
-.cart-section {
-    padding: 50px;
-    text-align: center;
-}
-
-.cart-container {
-    margin: 20px 0;
-}
-
-.cart-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}
-
-.cart-item h4 {
-    margin: 0;
-}
-
-.total {
-    font-size: 24px;
-    margin-top: 20px;
-}
-
-.btn-checkout {
-    background-color: #FF9800;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-checkout:hover {
-    background-color: #E67E22;
-}
-
-/* Estilos para el carrusel/banner de 3 imágenes */
-.carousel {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    height: 300px;
-    overflow: hidden;
-}
-
-.carousel img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 100%; /* Empieza fuera de la vista */
-    transition: left 1s ease-in-out;
-    z-index: 0; /* Asegurar que las imágenes están debajo del texto */
-}
-
-/* Clase para la imagen activa */
-.carousel img.active {
-    left: 0; /* La imagen activa está en la vista */
-}
-
-/* Texto superpuesto en el carrusel */
-.carousel-text {
-    position: absolute;
-    top: 50%; /* Centrar verticalmente */
-    left: 50%; /* Centrar horizontalmente */
-    transform: translate(-50%, -50%); /* Ajustar para centrar el texto */
-    color: white;
-    text-align: center;
-    z-index: 2; /* Asegurar que el texto está por encima de las imágenes */
-    font-family: Arial, sans-serif; /* Opcional: ajustar fuente */
-}
-
-.carousel-text h1 {
-    font-size: 3rem;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor visibilidad */
-}
-
-.carousel-text p {
-    font-size: 1.5rem;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para mejor visibilidad */
-}
-
-/* Controles opcionales para navegación manual */
-.carousel-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    z-index: 3; /* Los controles también deben estar por encima de las imágenes */
-}
-
-.carousel-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.carousel-controls button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.button-link {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #107515; /* Color de fondo del botón */
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.button-link:hover {
-    background-color: #619264; /* Color al pasar el ratón por encima */
-}
+    background-color:
