@@ -96,40 +96,34 @@ nav ul li {
     text-align: center;
 }
 
+.services-container {
+    display: flex;
+    justify-content: center; /* Centrar los elementos hijos */
+    flex-wrap: wrap; /* Permitir que los elementos se ajusten en varias filas */
+}
+
 .service {
-    margin: 15px;
+    margin: 15px; /* Espacio entre las tarjetas de servicio */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: box-shadow 0.3s;
+    width: 30%; /* Ancho de cada tarjeta, se puede ajustar */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
 }
 
 .service img {
-    max-width: 100%;
+    max-width: 100%; /* Mantener las imágenes responsivas */
     height: auto;
     border-radius: 5px;
 }
 
-/* Media query para servicios */
-@media (min-width: 768px) {
-    .services-section {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
     .service {
-        flex: 0 1 30%;
+        width: 90%; /* Ampliar el ancho en pantallas más pequeñas */
     }
 }
-
-@media (max-width: 767px) {
-    .service {
-        flex: 1 1 100%;
-        margin: 10px 0;
-    }
-}
-
 /* Sobre nosotros */
 .about-section {
     padding: 50px;
