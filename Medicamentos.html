@@ -6,14 +6,12 @@
     <title>SOLUVET - Medicamentos</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        
         .medicamento img {
             width: 200px; 
             height: 200px; 
             object-fit: cover; 
         }
 
-       
         .medicamentos-container {
             display: flex; 
             flex-wrap: wrap; 
@@ -26,15 +24,26 @@
 
         .medicamento {
             text-align: center; 
+            width: 220px; /* Ancho fijo para mantener el diseño */
         }
 
-        
+        .image-container {
+            display: flex; /* Para centrar la imagen en su contenedor */
+            justify-content: center; /* Centrar horizontalmente */
+            margin-bottom: 10px; /* Espacio debajo de la imagen */
+        }
+
         .medicamentos-section h2 {
             text-align: center; 
             margin-bottom: 20px; 
         }
 
-        
+        .description {
+            font-size: 14px; /* Ajusta el tamaño de la fuente */
+            color: #555; /* Color de texto gris */
+            margin: 10px 0; /* Margen superior e inferior */
+        }
+
         header {
             text-align: center; 
             padding: 20px;
@@ -43,58 +52,64 @@
 </head>
 <body>
     <header>
-    <div class="header-container">
-        <div class="logo-container">
-            <img src="Img/logo.png" alt="Logo SOLUVET">
-            <span class="logo-text">SOLUVET</span>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="Img/logo.png" alt="Logo SOLUVET">
+                <span class="logo-text">SOLUVET</span>
+            </div>
+            <div class="nav-container">
+                <nav>
+                    <ul>
+                        <li><a href="Index.html" class="button-link">Inicio</a></li>
+                        <li><a href="Alimentos.html" class="button-link">Alimentos</a></li>
+                        <li><a href="Accesorios.html" class="button-link">Accesorios</a></li>
+                        <li><a href="Juguetes.html" class="button-link">Juguetes</a></li>
+                        <li><a href="Carrito.html" class="button-link">Carro de Compras</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="nav-container">
-            <nav>
-                <ul>
-                    <li><a href="Index.html" class="button-link">Inicio</a></li>
-                    <li><a href="Alimentos.html" class="button-link">Alimentos</a></li>
-                    <li><a href="Accesorios.html" class="button-link">Accesorios</a></li>
-                    <li><a href="Juguetes.html" class="button-link">Juguetes</a></li>
-                    <li><a href="Carrito.html" class="button-link">Carro de Compras</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</header>
+    </header>
+
     <section class="medicamentos-section">
         <h2>Medicamentos para Mascotas</h2>
         <div class="medicamentos-container">
-            
             <div class="medicamento">
                 <div class="image-container">
-                <img src="Img/Medicamentos/Anti.jpg" alt="Medicamento 1">
+                    <img src="Img/Medicamentos/Anti.jpg" alt="Medicamento 1">
+                </div>
                 <h3>Antiparasitario</h3>
-                <p class="description">Un alimento premium para mantener a tu perro saludable y activo.</p>
+                <p class="description">Un antiparasitario eficaz para mantener a tus mascotas saludables.</p>
                 <p class="price">$35000</p>
                 <button class="btn-cart">Agregar al Carrito</button>
-                    </div>
             </div>
             
             <div class="medicamento">
-                <img src="Img/Medicamentos/Desin.jpg" alt="Medicamento 2">
+                <div class="image-container">
+                    <img src="Img/Medicamentos/Desin.jpg" alt="Medicamento 2">
+                </div>
                 <h3>Desinflamatorio</h3>
-                <p class="description">Un alimento premium para mantener a tu perro saludable y activo.</p>
+                <p class="description">Alivio para la inflamación y el dolor.</p>
                 <p class="price">$45000</p>
                 <button class="btn-cart">Agregar al Carrito</button>
             </div>
             
             <div class="medicamento">
-                <img src="Img/Medicamentos/Dolor.jpg" alt="Medicamento 3">
+                <div class="image-container">
+                    <img src="Img/Medicamentos/Dolor.jpg" alt="Medicamento 3">
+                </div>
                 <h3>Control del Dolor</h3>
-                 <p class="description">Un alimento premium para mantener a tu perro saludable y activo.</p>
+                <p class="description">Control efectivo del dolor para tus mascotas.</p>
                 <p class="price">$30000</p>
                 <button class="btn-cart">Agregar al Carrito</button>
             </div>
         
             <div class="medicamento">
-                <img src="Img/Medicamentos/Para.jpg" alt="Medicamento 4">
-                <h3>Antibioticos para gatos</h3>
-                <p class="description">Un alimento premium para mantener a tu perro saludable y activo.</p>
+                <div class="image-container">
+                    <img src="Img/Medicamentos/Para.jpg" alt="Medicamento 4">
+                </div>
+                <h3>Antibióticos para gatos</h3>
+                <p class="description">Tratamiento efectivo para infecciones en gatos.</p>
                 <p class="price">$28000</p>
                 <button class="btn-cart">Agregar al Carrito</button>
             </div>
@@ -107,23 +122,18 @@
 
     <script src="cart.js"></script>
     <script>
-        
         const cartButtons = document.querySelectorAll('.btn-cart');
 
-        
         cartButtons.forEach(button => {
             button.addEventListener('click', () => {
-                
                 const medicamentoName = button.previousElementSibling.previousElementSibling.textContent;
                 const medicamentoPrice = parseFloat(button.previousElementSibling.textContent.replace('$', ''));
 
-            
                 const medicamento = {
                     name: medicamentoName,
                     price: medicamentoPrice
                 };
 
-                
                 addToCart(medicamento);
                 alert(`${medicamentoName} ha sido agregado al carrito.`);
             });
