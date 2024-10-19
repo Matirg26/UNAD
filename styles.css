@@ -93,29 +93,29 @@ nav ul li {
 /* Servicios */
 .services-section {
     padding: 20px;
-    text-align: center;
+    text-align: center; /* Centra el texto en la sección */
 }
 
 .services-container {
-    display: flex;
-    justify-content: center; /* Centrar los elementos hijos */
-    align-items: center; /* Centrar verticalmente */
-    flex-wrap: wrap; /* Permitir que los elementos se ajusten en varias filas */
+    display: flex; /* Utiliza flexbox */
+    justify-content: center; /* Centra los elementos hijos horizontalmente */
+    align-items: flex-start; /* Alinea los elementos desde la parte superior */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente fila si es necesario */
 }
 
 .service {
-    margin: 15px; /* Espacio entre las tarjetas de servicio */
+    margin: 15px; /* Espacio entre cada servicio */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
     transition: box-shadow 0.3s;
-    width: 30%; /* Ancho de cada tarjeta, se puede ajustar */
-    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    width: 30%; /* Controla el ancho de cada tarjeta */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho */
 }
 
 .service img {
-    max-width: 100%; /* Mantener las imágenes responsivas */
-    height: auto;
+    max-width: 100%; /* Las imágenes ocupan el 100% del ancho de la tarjeta */
+    height: auto; /* Mantiene la proporción de la imagen */
     border-radius: 5px;
 }
 
@@ -125,6 +125,7 @@ nav ul li {
         width: 90%; /* Ampliar el ancho en pantallas más pequeñas */
     }
 }
+
 /* Sobre nosotros */
 .about-section {
     padding: 50px;
