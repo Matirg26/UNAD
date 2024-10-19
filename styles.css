@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    display: flex; /* Mantener el flexbox para el encabezado */
+    display: flex; /* Mantiene el flexbox para el encabezado */
     justify-content: space-between; /* Espacio entre el logo y los botones de navegación */
     align-items: center; /* Centrar verticalmente */
     padding: 10px 20px;
@@ -21,13 +21,13 @@ header {
 }
 
 .logo img {
-    max-width: 60%; /* Disminuir el tamaño del logo */
+    max-width: 50px; /* Ajusta el tamaño del logo (disminuir el tamaño) */
     height: auto; /* Mantener la proporción */
     margin-right: 10px; /* Espacio entre la imagen y el texto */
 }
 
 .logo-text {
-    font-size: 36px; /* Aumentar el tamaño de la fuente del texto */
+    font-size: 28px; /* Aumentar el tamaño de la fuente del texto */
     color: white; /* Color del texto */
     font-weight: bold; /* Grosor de la fuente */
 }
