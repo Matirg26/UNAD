@@ -99,6 +99,7 @@ nav ul li {
 .services-container {
     display: flex;
     justify-content: center; /* Centrar los elementos hijos */
+    align-items: center; /* Centrar verticalmente */
     flex-wrap: wrap; /* Permitir que los elementos se ajusten en varias filas */
 }
 
