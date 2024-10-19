@@ -64,6 +64,7 @@ nav ul li {
     background-color: #45a049; /* Cambio de color en hover */
 }
 
+
 /* Media Queries */
 @media (max-width: 768px) {
     nav ul {
