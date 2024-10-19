@@ -8,44 +8,46 @@ body {
 }
 
 header {
-    display: flex; /* Mantiene el flexbox para el encabezado */
-    justify-content: space-between; /* Espacio entre el logo y los botones de navegación */
-    align-items: center; /* Centrar verticalmente */
-    padding: 10px 20px;
     background-color: #4CAF50;
+    padding: 10px 20px;
 }
 
-.logo {
-    display: flex; /* Asegúrate de que el logo y el texto estén en línea */
+.header-container {
+    display: flex; /* Usa flexbox para el contenedor principal */
+    justify-content: space-between; /* Espacio entre el logo y la navegación */
     align-items: center; /* Centrar verticalmente */
 }
 
-.logo img {
-    max-width: 50px; /* Ajusta el tamaño del logo (disminuir el tamaño) */
-    height: auto; /* Mantener la proporción */
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
+.logo-container {
+    display: flex; /* Alinea logo y texto en línea */
+    align-items: center; /* Centra verticalmente */
+}
+
+.logo-container img {
+    max-width: 50px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene la proporción */
+    margin-right: 10px; /* Espacio entre el logo y el texto */
 }
 
 .logo-text {
-    font-size: 28px; /* Aumentar el tamaño de la fuente del texto */
+    font-size: 28px; /* Aumenta el tamaño del texto */
     color: white; /* Color del texto */
     font-weight: bold; /* Grosor de la fuente */
 }
 
-/* Estilo para el menú de navegación */
-nav {
-    margin-left: auto; /* Empujar el menú a la derecha */
+.nav-container {
+    margin-left: auto; /* Empuja el contenedor de navegación a la derecha */
 }
 
 nav ul {
-    display: flex;
+    display: flex; /* Mantiene el menú horizontal */
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin: 0 10px; /* Espacio entre los elementos de la lista */
 }
 
 .button-link {
@@ -59,7 +61,7 @@ nav ul li {
 }
 
 .button-link:hover {
-    background-color: #45a049;
+    background-color: #45a049; /* Cambio de color en hover */
 }
 
 /* Media Queries */
