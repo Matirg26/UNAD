@@ -22,13 +22,15 @@ header {
 }
 
 .logo img {
+    max-width: 80%; /* Disminuir el tamaño del logo, ajusta el porcentaje según sea necesario */
+    height: auto; /* Mantiene la proporción de la imagen */
     margin-right: 10px; /* Espacio entre la imagen y el texto */
 }
 
 .logo-text {
-    font-size: 30px; /* Tamaño de la fuente del texto */
+    font-size: 30px; /* Aumenta el tamaño de la fuente del texto */
     color: white; /* Color del texto, ajusta según necesites */
-    font-weight: bold; /* Puedes ajustar el grosor de la fuente */
+    font-weight: bold; /* Grosor de la fuente */
 }
 
 nav ul {
