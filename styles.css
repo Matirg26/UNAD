@@ -8,10 +8,10 @@ body {
 }
 
 header {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente todo el contenido del encabezado */
-    align-items: center; /* Centra verticalmente */
-    padding: 10px 15px;
+    display: flex; /* Mantener el flexbox para el encabezado */
+    justify-content: flex-start; /* Alinear elementos al inicio (izquierda) */
+    align-items: center; /* Centrar verticalmente */
+    padding: 10px 20px;
     background-color: #4CAF50;
 }
 
@@ -31,6 +31,7 @@ header {
     color: white; /* Color del texto, ajusta según necesites */
     font-weight: bold; /* Grosor de la fuente */
 }
+
 
 nav ul {
     display: flex;
