@@ -6,14 +6,12 @@
     <title>SOLUVET - Productos</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-    
         .producto img {
             width: 200px; 
             height: 200px; 
             object-fit: cover; 
         }
 
-        
         .productos-container {
             display: flex; 
             flex-wrap: wrap; 
@@ -28,13 +26,17 @@
             text-align: center; 
         }
 
-        
         .productos-section h2 {
             text-align: center; 
             margin-bottom: 20px; 
         }
 
-        
+        .description {
+            font-size: 14px; /* Ajusta el tamaño de la fuente */
+            color: #555; /* Color de texto gris */
+            margin: 10px 0; /* Margen superior e inferior */
+        }
+
         header {
             text-align: center; 
             padding: 20px;
@@ -43,33 +45,32 @@
 </head>
 <body>
     <header>
-    <div class="header-container">
-        <div class="logo-container">
-            <img src="Img/logo.png" alt="Logo SOLUVET">
-            <span class="logo-text">SOLUVET</span>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="Img/logo.png" alt="Logo SOLUVET">
+                <span class="logo-text">SOLUVET</span>
+            </div>
+            <div class="nav-container">
+                <nav>
+                    <ul>
+                        <li><a href="Index.html" class="button-link">Inicio</a></li>
+                        <li><a href="Medicamentos.html" class="button-link">Medicamentos</a></li>
+                        <li><a href="Juguetes.html" class="button-link">Juguetes</a></li>
+                        <li><a href="Accesorios.html" class="button-link">Accesorios</a></li>
+                        <li><a href="Carrito.html" class="button-link">Carro de Compras</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <div class="nav-container">
-            <nav>
-                <ul>
-                    <li><a href="Index.html" class="button-link">Inicio</a></li>
-                    <li><a href="Medicamentos.html" class="button-link">Medicamentos</a></li>
-                    <li><a href="Juguetes.html" class="button-link">Juguetes</a></li>
-                    <li><a href="Accesorios.html" class="button-link">Accesorios</a></li>
-                    <li><a href="Carrito.html" class="button-link">Carro de Compras</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</header>
-
+    </header>
 
     <section class="productos-section">
         <h2>Productos para Mascotas</h2>
         <div class="productos-container">
-        
             <div class="producto">
                 <img src="Img/Alimentos/Premium.png" alt="Producto 1">
                 <h3>Ringo para perro adulto</h3>
+                <p class="description">Un alimento premium para mantener a tu perro saludable y activo.</p>
                 <p class="price">$35000</p>
                 <button class="btn-cart">Agregar al Carrito</button>
             </div>
@@ -77,6 +78,7 @@
             <div class="producto">
                 <img src="Img/Alimentos/Chun.jpg" alt="Producto 2">
                 <h3>Chunky para perro adulto</h3>
+                <p class="description">Ideal para perros con necesidades energéticas altas.</p>
                 <p class="price">$30000</p>
                 <button class="btn-cart">Agregar al Carrito</button>
             </div>
@@ -84,6 +86,7 @@
             <div class="producto">
                 <img src="Img/Alimentos/Mirri.png" alt="Producto 3">
                 <h3>Mirringo para gato adulto</h3>
+                <p class="description">Nutrición balanceada para gatos de todas las razas.</p>
                 <p class="price">$25000</p>
                 <button class="btn-cart">Agregar al Carrito</button>
             </div>
@@ -91,10 +94,18 @@
             <div class="producto">
                 <img src="Img/Alimentos/Cat.jpg" alt="Producto 4">
                 <h3>Cat purina para gato adulto</h3>
+                <p class="description">Sabor irresistible para los gatos más exigentes.</p>
                 <p class="price">$28000</p>
                 <button class="btn-cart">Agregar al Carrito</button>
             </div>
         </div>
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="about" class="about-section">
+        <h2>Sobre Nosotros</h2>
+        <img src="Img/Index/sobre-nosotros.jpg" alt="Imagen de Sobre Nosotros" class="about-image">
+        <p>En SOLUVET, nos dedicamos al bienestar de tus mascotas. Contamos con un equipo especializado en diferentes áreas de la veterinaria.</p>
     </section>
 
     <footer>
@@ -103,23 +114,18 @@
 
     <script src="cart.js"></script>
     <script>
-        
         const cartButtons = document.querySelectorAll('.btn-cart');
 
-        
         cartButtons.forEach(button => {
             button.addEventListener('click', () => {
-                
                 const productoName = button.previousElementSibling.previousElementSibling.textContent;
                 const productoPrice = parseFloat(button.previousElementSibling.textContent.replace('$', ''));
 
-            
                 const producto = {
                     name: productoName,
                     price: productoPrice
                 };
 
-                
                 addToCart(producto);
                 alert(`${productoName} ha sido agregado al carrito.`);
             });
