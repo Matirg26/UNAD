@@ -285,3 +285,10 @@ footer {
 .carousel-controls button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
+
+.description {
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    color: #555; /* Color de texto gris */
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
