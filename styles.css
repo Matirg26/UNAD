@@ -11,7 +11,7 @@ header {
     display: flex;
     justify-content: center; /* Centra horizontalmente todo el contenido del encabezado */
     align-items: center; /* Centra verticalmente */
-    padding: 10px 20px;
+    padding: 10px 15px;
     background-color: #4CAF50;
 }
 
@@ -26,7 +26,7 @@ header {
 }
 
 .logo-text {
-    font-size: 24px; /* Tamaño de la fuente del texto */
+    font-size: 30px; /* Tamaño de la fuente del texto */
     color: white; /* Color del texto, ajusta según necesites */
     font-weight: bold; /* Puedes ajustar el grosor de la fuente */
 }
