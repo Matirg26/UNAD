@@ -7,18 +7,28 @@ body {
     box-sizing: border-box;
 }
 
-/* Encabezado */
 header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center; /* Centra horizontalmente todo el contenido del encabezado */
+    align-items: center; /* Centra verticalmente */
     padding: 10px 20px;
     background-color: #4CAF50;
 }
 
+.logo {
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto con el logo */
+    margin-right: 20px; /* Espacio entre el logo y el menú de navegación */
+}
+
 .logo img {
-    max-width: 100%;
-    height: auto;
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.logo-text {
+    font-size: 24px; /* Tamaño de la fuente del texto */
+    color: white; /* Color del texto, ajusta según necesites */
+    font-weight: bold; /* Puedes ajustar el grosor de la fuente */
 }
 
 nav ul {
