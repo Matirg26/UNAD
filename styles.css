@@ -16,19 +16,18 @@ header {
 }
 
 .logo {
-    display: flex;
-    align-items: center; /* Centra verticalmente el texto con el logo */
-    margin-right: 20px; /* Espacio entre el logo y el menú de navegación */
+    display: flex; /* Asegúrate de que el logo y el texto estén en línea */
+    align-items: center; /* Centrar verticalmente */
 }
 
 .logo img {
-    max-width: 80%; /* Disminuir el tamaño del logo, ajusta el porcentaje según sea necesario */
-    height: auto; /* Mantiene la proporción de la imagen */
+    max-width: 70%; /* Disminuir el tamaño del logo */
+    height: auto; /* Mantener la proporción */
     margin-right: 10px; /* Espacio entre la imagen y el texto */
 }
 
 .logo-text {
-    font-size: 30px; /* Aumenta el tamaño de la fuente del texto */
+    font-size: 36px; /* Aumentar el tamaño de la fuente del texto */
     color: white; /* Color del texto, ajusta según necesites */
     font-weight: bold; /* Grosor de la fuente */
 }
