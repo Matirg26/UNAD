@@ -8,45 +8,79 @@ body {
     overflow-x: hidden; /* Evitar desplazamiento horizontal */
 }
 
+/* Encabezado */
 header {
-    background-color: #4CAF50;
-    padding: 10px 20px;
+    background-color: #4CAF50; /* Verde llamativo */
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
-.header .logo-img {
-    max-width: 120px;
+.logo-container img {
+    max-width: 40px; /* Tamaño más pequeño */
     height: auto;
+    margin-right: 10px;
 }
 
-.navbar {
-    margin-left: auto;
+.logo-text {
+    font-size: 24px; /* Tamaño ajustado */
+    color: white;
+    font-weight: bold;
 }
 
-.navbar-list {
+/* Navegación */
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
     display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
+nav ul li {
+    margin: 0 15px;
+}
+
 .navbar-link {
     color: white;
+    font-size: 16px;
     text-decoration: none;
     padding: 10px 15px;
-    transition: background-color 0.3s;
     border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar-link:hover {
-    background-color: #388E3C;
+    background-color: #3a923a; /* Verde oscuro */
+    color: #f0f0f0; /* Color de texto claro */
 }
+
+/* Botones */
+.button-link {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #FF9800, #E67E22); /* Gradiente atractivo */
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.button-link:hover {
+    transform: scale(1.05); /* Efecto hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #E67E22, #D35400); /* Gradiente más oscuro */
+}
+
 
 /* Banner principal */
 .main-banner {
