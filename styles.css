@@ -98,15 +98,17 @@ header {
     background: url('Img/Index/Banner.png') no-repeat center center;
     background-size: cover;
     text-align: center;
-    padding: 150px 0;
+    padding: 0;
     color: rgb(16, 15, 15);
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    height: 100vh; /* Esto hace que el banner ocupe toda la altura de la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
-/* Ajuste de la caja del banner */
+/* Títulos y texto en el banner */
 .main-banner h1 {
     font-size: 48px;
     margin: 0;
@@ -115,7 +117,6 @@ header {
 .main-banner p {
     font-size: 24px;
 }
-
 /* Botones primarios */
 .btn-primary, .btn-cart, .btn-checkout {
     background: linear-gradient(45deg, #FF9800, #E67E22);
