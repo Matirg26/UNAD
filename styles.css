@@ -11,8 +11,7 @@ header {
     background-color: #4CAF50;
     padding: 10px 20px;
     width: 100%;
-    max-width: 1200px; /* Limita el ancho del header */
-    margin: 0 auto; /* Centra el header */
+    box-sizing: border-box;
 }
 
 .header-container {
@@ -39,51 +38,58 @@ header {
     font-weight: bold;
 }
 
-.nav-container {
-    margin-left: auto;
+.navbar {
+    position: absolute;
+    top: 10px;
+    right: 20px; /* Ajuste del espacio */
 }
 
-nav ul {
+.navbar-list {
     display: flex;
+    gap: 15px;
     list-style: none;
-    padding: 0;
     margin: 0;
 }
 
-nav ul li {
-    margin: 0 10px;
-}
-
-.button-link {
-    display: inline-block;
-    padding: 10px 15px;
-    background: linear-gradient(45deg, #4CAF50, #45a049);
+.navbar-link {
     color: white;
     text-decoration: none;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s;
 }
 
-.button-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    background-color: #3a923a;
-    color: #f0f0f0;
+.navbar-link:hover {
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-/* Media Queries */
+/* Media Queries para pantallas pequeñas */
 @media (max-width: 768px) {
-    nav ul {
+    .header-container {
+        justify-content: flex-start;
+    }
+
+    .logo-container {
+        margin-left: 0;
+    }
+
+    .navbar {
+        position: relative;
+        top: auto;
+        right: auto;
+        display: flex;
+        justify-content: space-around;
+        gap: 10px;
+    }
+
+    .navbar-list {
         flex-direction: column;
         align-items: center;
     }
-    nav ul li {
-        margin: 5px 0;
-    }
 
-    .header-container {
-        justify-content: flex-start; /* Alinea el header hacia la izquierda */
+    .navbar-link {
+        margin-bottom: 10px;
     }
 }
 
@@ -100,31 +106,14 @@ nav ul li {
     position: relative;
 }
 
-/* Alineación de los botones en la esquina superior derecha */
-.navbar {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.navbar-list {
-    display: flex;
-    gap: 10px;
-    list-style: none;
+/* Ajuste de la caja del banner */
+.main-banner h1 {
+    font-size: 48px;
     margin: 0;
 }
 
-.navbar-link {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-    transition: background-color 0.3s;
-}
-
-.navbar-link:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+.main-banner p {
+    font-size: 24px;
 }
 
 /* Botones primarios */
@@ -143,4 +132,109 @@ nav ul li {
 .btn-primary:hover, .btn-cart:hover, .btn-checkout:hover {
     background: linear-gradient(45deg, #E67E22, #D35400);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Servicios */
+.services-section {
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.services-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.service {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.service img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .service {
+        width: 90%;
+    }
+}
+
+/* Carrito */
+.cart-section {
+    padding: 20px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cart-container {
+    margin-bottom: 20px;
+}
+
+.total {
+    text-align: center;
+    font-size: 20px;
+}
+
+#total-price {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+/* Botón de Proceder al Pago */
+.btn-checkout {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #27AE60;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-checkout:hover {
+    background-color: #2ECC71;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #2C3E50;
+    color: white;
+    font-size: 14px;
 }
