@@ -1,116 +1,293 @@
 /* Estilos generales */
 body {
-    font-family: 'Poppins', Arial, sans-serif;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f9f9f9;
 }
 
-/* Encabezado */
 header {
     background-color: #4CAF50;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex; /* Usa flexbox para el contenedor principal */
+    justify-content: space-between; /* Espacio entre el logo y la navegación */
+    align-items: center; /* Centrar verticalmente */
 }
 
 .logo-container {
-    display: flex;
-    align-items: center;
+    display: flex; /* Alinea logo y texto en línea */
+    align-items: center; /* Centra verticalmente */
 }
 
 .logo-container img {
-    max-width: 50px;
-    height: auto;
-    margin-right: 10px;
+    max-width: 50px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene la proporción */
+    margin-right: 10px; /* Espacio entre el logo y el texto */
 }
 
 .logo-text {
-    font-size: 24px;
-    color: white;
-    font-weight: bold;
+    font-size: 28px; /* Aumenta el tamaño del texto */
+    color: white; /* Color del texto */
+    font-weight: bold; /* Grosor de la fuente */
 }
 
 .nav-container {
-    display: flex;
-    gap: 15px;
+    margin-left: auto; /* Empuja el contenedor de navegación a la derecha */
 }
 
-.navbar-link {
-    font-size: 16px;
-    padding: 8px 16px;
+nav ul {
+    display: flex; /* Mantiene el menú horizontal */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 10px; /* Espacio entre los elementos de la lista */
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4CAF50;
     color: white;
     text-decoration: none;
-    background: linear-gradient(45deg, #FF9800, #E67E22);
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-.navbar-link:hover {
-    background: linear-gradient(45deg, #E67E22, #D35400);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05);
+.button-link:hover {
+    background-color: #45a049; /* Cambio de color en hover */
+}
+
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 5px 0;
+    }
 }
 
 /* Banner principal */
 .main-banner {
     background: url('Img/Index/Banner.png') no-repeat center center;
     background-size: cover;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    color: white;
-    padding: 20px;
+    padding: 150px 0;
+    color: rgb(16, 15, 15);
 }
 
 .main-banner h1 {
     font-size: 48px;
     margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .main-banner p {
     font-size: 24px;
-    margin-top: 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Botones primarios */
+.btn-primary, .btn-cart, .btn-checkout {
+    background-color: #FF9800;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover, .btn-cart:hover, .btn-checkout:hover {
+    background-color: #E67E22;
+}
+
+/* Servicios */
+.services-section {
+    padding: 20px;
+    text-align: center; /* Centra el texto en la sección */
+}
+
+.services-container {
+    display: flex; /* Utiliza flexbox */
+    justify-content: center; /* Centra los elementos hijos horizontalmente */
+    align-items: flex-start; /* Alinea los elementos desde la parte superior */
+    flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente fila si es necesario */
+}
+
+.service {
+    margin: 15px; /* Espacio entre cada servicio */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+    width: 30%; /* Controla el ancho de cada tarjeta */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho */
+}
+
+.service img {
+    max-width: 100%; /* Las imágenes ocupan el 100% del ancho de la tarjeta */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 5px;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .service {
+        width: 90%; /* Ampliar el ancho en pantallas más pequeñas */
+    }
+}
+
+/* Sobre nosotros */
+.about-section {
+    padding: 50px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 36px;
+}
+
+.about-section p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Contacto */
+.contact-section {
+    padding: 50px;
+    background-color: #f1f1f1;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-section form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.contact-section input, .contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 15px 0;
     background-color: #333;
     color: white;
-    font-size: 14px;
+    text-align: center;
+    padding: 15px 0;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-    .logo-text {
-        font-size: 20px;
-    }
+/* Estilos de productos, accesorios, medicamentos y juguetes */
+.products-container, .accessories-container, .medications-container, .toys-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 
-    .nav-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
+.product, .accessory, .medication, .toy {
+    width: 45%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-    .main-banner {
-        height: 300px;
-    }
+/* Estilos de texto para productos */
+.product h3, .accessory h3, .medication h3, .toy h3 {
+    font-size: 20px;
+    margin-top: 15px;
+}
 
-    .main-banner h1 {
-        font-size: 36px;
-    }
+.product .price, .accessory .price, .medication .price, .toy .price {
+    font-size: 18px;
+    color: #4CAF50;
+    margin: 10px 0;
+}
 
-    .main-banner p {
-        font-size: 18px;
-    }
+/* Carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 100%;
+    transition: left 1s ease-in-out;
+}
+
+.carousel img.active {
+    left: 0;
+}
+
+.carousel-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+
+.carousel-text h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-text p {
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Controles del carrusel */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.description {
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    color: #555; /* Color de texto gris */
+    margin: 10px 0; /* Margen superior e inferior */
 }
