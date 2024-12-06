@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
     overflow-x: hidden;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,57 +13,58 @@ header {
 }
 
 .header-container {
-    display: flex; /* Usa flexbox para el contenedor principal */
-    justify-content: space-between; /* Espacio entre el logo y la navegación */
-    align-items: center; /* Centrar verticalmente */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo-container {
-    display: flex; /* Alinea logo y texto en línea */
-    align-items: center; /* Centra verticalmente */
+    display: flex;
+    align-items: center;
 }
 
 .logo-container img {
-    max-width: 50px; /* Ajusta el tamaño del logo */
-    height: auto; /* Mantiene la proporción */
-    margin-right: 10px; /* Espacio entre el logo y el texto */
+    max-width: 50px;
+    height: auto;
+    margin-right: 10px;
 }
 
 .logo-text {
-    font-size: 28px; /* Aumenta el tamaño del texto */
-    color: white; /* Color del texto */
-    font-weight: bold; /* Grosor de la fuente */
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
 }
 
 .nav-container {
-    margin-left: auto; /* Empuja el contenedor de navegación a la derecha */
+    margin-left: auto;
 }
 
 nav ul {
-    display: flex; /* Mantiene el menú horizontal */
+    display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 nav ul li {
-    margin: 0 10px; /* Espacio entre los elementos de la lista */
+    margin: 0 10px;
 }
 
 .button-link {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #4CAF50;
+    background: linear-gradient(45deg, #4CAF50, #45a049);
     color: white;
     text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .button-link:hover {
-    background-color: #45a049; /* Cambio de color en hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
-
 
 /* Media Queries */
 @media (max-width: 768px) {
@@ -96,52 +97,66 @@ nav ul li {
 
 /* Botones primarios */
 .btn-primary, .btn-cart, .btn-checkout {
-    background-color: #FF9800;
+    background: linear-gradient(45deg, #FF9800, #E67E22);
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border-radius: 30px;
     text-decoration: none;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
 }
 
 .btn-primary:hover, .btn-cart:hover, .btn-checkout:hover {
-    background-color: #E67E22;
+    background: linear-gradient(45deg, #E67E22, #D35400);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Servicios */
 .services-section {
-    padding: 20px;
-    text-align: center; /* Centra el texto en la sección */
+    padding: 40px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.services-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 .services-container {
-    display: flex; /* Utiliza flexbox */
-    justify-content: center; /* Centra los elementos hijos horizontalmente */
-    align-items: flex-start; /* Alinea los elementos desde la parte superior */
-    flex-wrap: wrap; /* Permite que los elementos se ajusten a la siguiente fila si es necesario */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .service {
-    margin: 15px; /* Espacio entre cada servicio */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    transition: box-shadow 0.3s;
-    width: 30%; /* Controla el ancho de cada tarjeta */
-    box-sizing: border-box; /* Incluye el padding y el borde en el ancho */
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 30%;
+    box-sizing: border-box;
 }
 
 .service img {
-    max-width: 100%; /* Las imágenes ocupan el 100% del ancho de la tarjeta */
-    height: auto; /* Mantiene la proporción de la imagen */
-    border-radius: 5px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.service:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Media query para dispositivos móviles */
 @media (max-width: 768px) {
     .service {
-        width: 90%; /* Ampliar el ancho en pantallas más pequeñas */
+        width: 90%;
     }
 }
 
@@ -180,9 +195,28 @@ nav ul li {
 
 .contact-section input, .contact-section textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin: 10px 0;
     font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-section button {
+    background: linear-gradient(45deg, #FF9800, #E67E22);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.contact-section button:hover {
+    background: linear-gradient(45deg, #E67E22, #D35400);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Footer */
@@ -193,7 +227,7 @@ footer {
     padding: 15px 0;
 }
 
-/* Estilos de productos, accesorios, medicamentos y juguetes */
+/* Estilos para productos y secciones relacionadas */
 .products-container, .accessories-container, .medications-container, .toys-container {
     display: flex;
     justify-content: space-between;
@@ -202,16 +236,14 @@ footer {
 }
 
 .product, .accessory, .medication, .toy {
-    width: 45%;
     background-color: #fff;
     border: 1px solid #ddd;
     padding: 20px;
     text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos de texto para productos */
 .product h3, .accessory h3, .medication h3, .toy h3 {
     font-size: 20px;
     margin-top: 15px;
@@ -264,7 +296,6 @@ footer {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* Controles del carrusel */
 .carousel-controls {
     position: absolute;
     top: 50%;
@@ -287,8 +318,7 @@ footer {
 }
 
 .description {
-    font-size: 14px; /* Ajusta el tamaño de la fuente */
-    color: #555; /* Color de texto gris */
-    margin: 10px 0; /* Margen superior e inferior */
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
 }
-
