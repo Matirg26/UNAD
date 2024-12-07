@@ -13,7 +13,7 @@ body {
 
 /* Header styles */
 header {
-    background-color: #0073e6; /* Restaura el color de fondo del encabezado */
+    background-color: #28a745; /* Cambié el color a verde */
     padding: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -41,14 +41,14 @@ header nav ul li {
 
 header nav ul li a {
     text-decoration: none;
-    color: #fff; /* Cambiar el color del texto a blanco */
+    color: #fff; /* Enlaces en blanco */
     font-weight: bold;
     padding: 10px;
     transition: color 0.3s;
 }
 
 header nav ul li a:hover {
-    color: #f1c40f; /* Cambio de color al pasar el mouse */
+    color: #f1c40f; /* Color al pasar el mouse */
 }
 
 /* Section styles */
@@ -94,7 +94,7 @@ h2 {
 
 /* Button styles */
 .btn-cart {
-    background-color: #0073e6;
+    background-color: #f39c12; /* Botones en color naranja */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -103,7 +103,7 @@ h2 {
 }
 
 .btn-cart:hover {
-    background-color: #005bb5;
+    background-color: #e67e22; /* Color más oscuro para el hover */
 }
 
 /* Price styling */
