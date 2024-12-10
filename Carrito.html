@@ -3,55 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOLUVET - Carrito de Compras</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Carrito de Compras</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS principal -->
+    <style>
+        /* Estilo para la tabla de carrito */
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .cart-table th, .cart-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .cart-table th {
+            background-color: #28a745;
+            color: white;
+        }
+        .cart-table td {
+            background-color: #f8f9fa;
+        }
+        .cart-table tr:nth-child(even) td {
+            background-color: #e9ecef;
+        }
+        .cart-table button {
+            background-color: #ff5733;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .cart-table button:hover {
+            background-color: #c0392b;
+        }
+        .total-price {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 20px;
+        }
+        #cart-container {
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header / Encabezado -->
     <header>
-    <div class="header-container">
-        <div class="logo-container">
-            <img src="Img/logo.png" alt="Logo SOLUVET">
-            <span class="logo-text">SOLUVET</span>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="Img/logo.png" alt="Logo SOLUVET">
+                <span class="logo-text">SOLUVET</span>
+            </div>
+            <div class="nav-container">
+                <nav>
+                    <ul>
+                        <li><a href="Alimentos.html" class="button-link">Alimentos</a></li>
+                        <li><a href="Medicamentos.html" class="button-link">Medicamentos</a></li>
+                        <li><a href="Juguetes.html" class="button-link">Juguetes</a></li>
+                        <li><a href="Accesorios.html" class="button-link">Accesorios</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-        <!-- Botón de menú -->
-        <button id="menu-toggle" class="menu-toggle">&#9776;</button>
-        <!-- Menú desplegable -->
-        <div id="nav-menu" class="nav-container">
-            <nav>
-                <ul>
-                    <li><a href="Index.html" class="button-link">Inicio</a></li>
-                    <li><a href="Alimentos.html" class="button-link">Alimentos</a></li>
-                    <li><a href="Medicamentos.html" class="button-link">Medicamentos</a></li>
-                    <li><a href="Juguetes.html" class="button-link">Juguetes</a></li>
-                    <li><a href="Accesorios.html" class="button-link">Accesorios</a></li>
-                    <li><a href="Carrito.html" class="button-link">Carro de Compras</a></li>
-                </ul>
-            </nav>
-        </div>
+    </header>
+
+    <h2>Carrito de Compras</h2>
+    
+    <!-- Tabla con los productos del carrito -->
+    <table class="cart-table">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="cart-container">
+            <!-- Los productos se generarán dinámicamente aquí -->
+        </tbody>
+    </table>
+
+    <!-- Total -->
+    <div class="total-price">
+        <span>Total: </span><span id="total-price">$0</span>
     </div>
-</header>
 
-
-
-    <!-- Sección del carrito -->
-    <section class="cart-section">
-        <h2>Carrito de Compras</h2>
-        <div class="cart-container" id="cart-container">
-            <!-- Los productos se agregarán aquí dinámicamente -->
-        </div>
-        <div class="total">
-            <h3>Total: <span id="total-price">$0</span></h3>
-        </div>
-        <button class="btn-checkout">Proceder al Pago</button>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>TIENDA VETERINARIA SOLUVET - SOGAMOSO, BOYACA - TELEFONOS 311 580 4952 </p>
+    <footer>
+        <p>© 2024 ELIANA GARCÍA - FASE 2 APLICACIONES MULTIMEDIA</p>
     </footer>
 
-    <script src="cart.js"></script>
+    <script src="cart.js"></script> <!-- Enlace al archivo JavaScript del carrito -->
+    <script>
+        function addToCart(product) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartContainer = document.getElementById("cart-container");
+            const totalPriceElement = document.getElementById("total-price");
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cartContainer.innerHTML = "";
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                const cartItem = document.createElement("tr");
+                cartItem.className = "cart-item";
+                cartItem.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>$${item.price.toLocaleString('es-CO', {minimumFractionDigits: 0, maximumFractionDigits: 2})}</td>
+                    <td><button onclick="removeFromCart(${index})">Eliminar</button></td>
+                `;
+                cartContainer.appendChild(cartItem);
+                total += item.price;
+            });
+
+            totalPriceElement.textContent = `$${total.toLocaleString('es-CO', {minimumFractionDigits: 0, maximumFractionDigits: 2})}`;
+        }
+
+        function removeFromCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+        }
+
+        document.addEventListener('DOMContentLoaded', renderCart);
+    </script>
 </body>
-    <script src="menu.js"></script>
 </html>
