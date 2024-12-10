@@ -4,138 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOLUVET</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Archivo CSS optimizado -->
-    <style>
-        /* Carrusel */
-        .carousel {
-            position: relative;
-            max-width: 100%;
-            overflow: hidden;
-        }
-
-        .carousel img {
-            width: 100%;
-            display: none;
-            transition: opacity 1s ease-in-out;
-        }
-
-        .carousel img.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .carousel-text {
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            color: white;
-            font-size: 2em;
-            font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .carousel-controls {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-        }
-
-        .carousel-controls button {
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 24px;
-        }
-
-        .carousel-controls button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        /* Estilos para los servicios */
-        .services-section {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #f4f4f4;
-        }
-
-        .services-container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .service {
-            text-align: center;
-            width: 250px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        .service img {
-            width: 100%;
-            max-width: 150px;
-            margin-bottom: 15px;
-        }
-
-        .btn-primary {
-            background-color: #5c9e60;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: #4b7f4d;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Responsivo */
-        @media (max-width: 768px) {
-            .services-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .carousel-text h1 {
-                font-size: 1.8em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
 <header>
     <div class="header-container">
         <div class="logo-container">
             <img src="Img/logo.png" alt="Logo SOLUVET">
             <span class="logo-text">SOLUVET</span>
         </div>
-        <div class="nav-container">
-            <button class="menu-toggle" id="menu-toggle">&#9776;</button> <!-- Menú hamburguesa -->
-            <nav id="nav-menu" class="nav-menu">
+        <!-- Botón para menú móvil -->
+        <button id="menu-toggle" class="menu-toggle">
+            &#9776; <!-- Ícono de hamburguesa -->
+        </button>
+        <!-- Menú de navegación -->
+        <div id="nav-menu" class="nav-container">
+            <nav>
                 <ul>
                     <li><a href="Alimentos.html" class="button-link">Alimentos</a></li>
                     <li><a href="Medicamentos.html" class="button-link">Medicamentos</a></li>
@@ -154,12 +38,9 @@
         <h1>Bienvenido a SOLUVET</h1>
         <p>Soluciones con mucho amor para el cuidado de tus mascotas</p>
     </div>
-
     <img src="Img/Index/Banner.png" alt="Imagen del banner 1" class="active">
     <img src="Img/Index/Banner1.jpg" alt="Imagen del banner 2">
     <img src="Img/Index/Banner2.jpg" alt="Imagen del banner 3">
-
-    <!-- Controles del carrusel -->
     <div class="carousel-controls">
         <button id="prev">&larr;</button>
         <button id="next">&rarr;</button>
@@ -200,13 +81,10 @@
     <form action="#">
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" required>
-        
         <label for="email">Correo:</label>
         <input type="email" id="email" name="email" required>
-
         <label for="message">Mensaje:</label>
         <textarea id="message" name="message" required></textarea>
-
         <button type="submit" class="btn-primary">Enviar</button>
     </form>
 </section>
@@ -216,37 +94,7 @@
     <p>TIENDA VETERINARIA SOLUVET - SOGAMOSO, BOYACÁ - TEL: 300 200 0000</p>
 </footer>
 
-<script src="carousel.js"></script> <!-- Enlace al archivo JS del carrusel -->
-
-<script>
-    // Lógica del carrusel
-    let index = 0;
-    const images = document.querySelectorAll('.carousel img');
-    const prevButton = document.getElementById('prev');
-    const nextButton = document.getElementById('next');
-
-    function showImage(index) {
-        images.forEach((img, i) => {
-            img.classList.remove('active');
-            if (i === index) img.classList.add('active');
-        });
-    }
-
-    prevButton.addEventListener('click', () => {
-        index = (index === 0) ? images.length - 1 : index - 1;
-        showImage(index);
-    });
-
-    nextButton.addEventListener('click', () => {
-        index = (index === images.length - 1) ? 0 : index + 1;
-        showImage(index);
-    });
-
-    setInterval(() => {
-        index = (index === images.length - 1) ? 0 : index + 1;
-        showImage(index);
-    }, 5000); // Cambio de imagen cada 5 segundos
-</script>
-
+<script src="menu.js"></script>
+<script src="carousel.js"></script>
 </body>
 </html>
