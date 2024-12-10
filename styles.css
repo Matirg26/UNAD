@@ -1,17 +1,10 @@
-/* General reset */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-header {
-    background-color: #2e7d32; /* Verde */
-    color: white;
+/* Estilos generales para el menú */
+.header-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     padding: 10px 20px;
-    position: relative;
+    background-color: green; /* Color verde */
 }
 
 .logo-container {
@@ -20,80 +13,91 @@ header {
 }
 
 .logo-container img {
-    height: 50px;
+    height: 50px; /* Ajustar tamaño del logo */
+    margin-right: 10px;
 }
 
 .logo-text {
-    font-size: 24px;
-    margin-left: 10px;
-    font-weight: bold;
-}
-
-.menu-toggle {
-    background: none;
-    border: none;
+    font-size: 20px; /* Tamaño del texto junto al logo */
     color: white;
-    font-size: 24px;
-    cursor: pointer;
 }
 
 .nav-container {
-    display: none;
+    display: none; /* Ocultar inicialmente en móviles */
+    flex-direction: column; /* Alinear verticalmente para móviles */
     position: absolute;
     top: 60px;
     right: 20px;
-    background-color: #2e7d32;
+    background-color: green;
     width: 200px;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
 }
 
 .nav-container.active {
-    display: block;
+    display: flex; /* Mostrar menú cuando se active */
 }
 
-.nav-container nav ul {
+.nav-container ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
-.nav-container nav ul li {
-    width: 100%;
+.nav-container li {
+    margin: 10px 0;
+    text-align: center;
 }
 
-.nav-container nav ul li a {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    color: white;
+.nav-container a {
     text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 4px;
     transition: background 0.3s;
 }
 
-.nav-container nav ul li a:hover {
-    background: #ffa000; /* Naranja */
+.nav-container a:hover {
+    background-color: orange;
 }
 
-@media (min-width: 768px) {
+.menu-toggle {
+    display: none; /* Ocultar botón en pantallas grandes */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 768px) {
     .menu-toggle {
-        display: none;
+        display: block; /* Mostrar botón en móviles */
     }
     .nav-container {
-        display: flex !important;
+        display: none; /* Ocultar menú por defecto */
+        flex-direction: column;
+    }
+}
+
+/* Pantallas grandes */
+@media (min-width: 769px) {
+    .nav-container {
+        display: flex; /* Mostrar menú siempre en pantallas grandes */
         position: static;
+        flex-direction: row;
         background: none;
-        width: auto;
         box-shadow: none;
     }
-    .nav-container nav ul {
-        flex-direction: row;
-        align-items: center;
+
+    .nav-container ul {
+        display: flex;
     }
-    .nav-container nav ul li a {
-        padding: 5px 10px;
+
+    .nav-container li {
+        margin: 0 10px;
     }
 }
