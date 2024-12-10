@@ -6,46 +6,6 @@
     <title>SOLUVET - Juguetes</title>
     <link rel="stylesheet" href="styles.css">
     <script src="menu.js"></script>
-
-    <style>
-        .juguete img {
-            width: 200px; 
-            height: 200px; 
-            object-fit: cover; 
-        }
-
-        .juguetes-container {
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 20px; 
-            justify-content: center; 
-            align-items: flex-start; 
-            margin: 0 auto; 
-            max-width: 800px; 
-        }
-
-        .juguete {
-            display: flex; /* Flex para organizar los elementos en línea */
-            flex-direction: column; /* Apilar los elementos verticalmente */
-            text-align: center; 
-            width: 220px; /* Ancho fijo para mantener el diseño */
-        }
-
-        .juguetes-section h2 {
-            text-align: center; 
-            margin-bottom: 20px; 
-        }
-
-        .price {
-            font-size: 18px; /* Ajustar el tamaño de la fuente del precio */
-            margin: 10px 0; /* Margen para el precio */
-        }
-
-        header {
-            text-align: center; 
-            padding: 20px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -54,8 +14,8 @@
             <img src="Img/logo.png" alt="Logo SOLUVET">
             <span class="logo-text">SOLUVET</span>
         </div>
-        <!-- Botón de menú -->
-        <button id="menu-toggle" class="menu-toggle">&#9776;</button>
+        <!-- Botón del menú -->
+        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
         <!-- Menú desplegable -->
         <div id="nav-menu" class="nav-container">
             <nav>
@@ -71,6 +31,7 @@
         </div>
     </div>
 </header>
+
 
     <section class="juguetes-section">
         <h2>Juguetes para Mascotas</h2>
