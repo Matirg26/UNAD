@@ -1,136 +1,97 @@
-/* Estilos generales */
+/* General reset */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-/* Header */
 header {
+    background-color: #2e7d32; /* Verde */
+    color: white;
     display: flex;
-    justify-content: space-between; /* Alinea el contenido a los extremos */
     align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
-    background-color: #2c3e50;
-    width: 100%; /* Asegura que el header ocupe todo el ancho */
-    box-sizing: border-box; /* Incluye el padding en el tamaño total */
-}
-
-.header-container {
-    display: flex;
-    justify-content: flex-start; /* Alinea el logo a la izquierda */
-    align-items: center;
-    width: 100%;
+    position: relative;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    margin-left: 0; /* Eliminar cualquier margen que pudiera estar afectando la posición */
 }
 
 .logo-container img {
-    width: 50px; /* Tamaño del logo */
-    height: auto;
+    height: 50px;
 }
 
 .logo-text {
+    font-size: 20px;
     margin-left: 10px;
-    font-size: 28px; /* Aumento de 4 puntos al tamaño original del texto */
-    color: #fff;
     font-weight: bold;
 }
 
-/* Navbar */
-.nav-container {
-    position: relative;
-}
-
-.nav-container nav {
-    display: flex;
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    display: none; /* Oculto por defecto */
 }
 
 .nav-container nav ul {
-    display: flex;
-    list-style: none;
-    margin-left: auto; /* Mueve los enlaces del menú a la derecha */
-}
-
-.nav-container nav ul li {
-    margin: 0 15px;
-}
-
-.nav-container nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.nav-container nav ul li a:hover {
-    background-color: #5c9e60;
-}
-
-/* Botón de menú hamburguesa */
-.menu-toggle {
-    display: none; /* Oculto por defecto */
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 30px;
-    cursor: pointer;
-    padding: 10px;
-}
-
-.nav-menu {
-    display: flex;
-}
-
-.nav-menu ul {
-    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
-.nav-menu ul li {
-    margin: 0 15px;
+.nav-container nav ul li {
+    margin: 0 10px;
 }
 
-/* Mostrar el menú en dispositivos móviles */
+.nav-container nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background 0.3s;
+}
+
+.nav-container nav ul li a:hover {
+    background: #ffa000; /* Naranja */
+    color: white;
+}
+
+/* Menú móvil */
 @media (max-width: 768px) {
-    .nav-container nav {
-        display: none; /* Ocultamos el menú de navegación en pantallas pequeñas */
-    }
-
     .menu-toggle {
-        display: block; /* Muestra el botón hamburguesa */
+        display: block;
     }
 
-    .nav-menu.active {
-        display: block; /* Muestra el menú cuando se activa */
-    }
-
-    .nav-menu ul {
-        flex-direction: column;
-        width: 100%;
-        background-color: #2c3e50;
+    .nav-container {
+        display: none;
         position: absolute;
         top: 60px;
-        left: 0;
-        padding: 10px 0;
+        right: 20px;
+        background-color: #2e7d32;
+        width: 200px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
-    .nav-menu ul li {
-        margin: 10px 0;
-        text-align: center;
+    .nav-container.active {
+        display: block;
     }
 
-    .nav-menu ul li a {
-        padding: 12px 0;
-        font-size: 18px;
+    .nav-container nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-container nav ul li {
+        width: 100%;
+    }
+
+    .nav-container nav ul li a {
+        display: block;
+        width: 100%;
     }
 }
