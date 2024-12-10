@@ -5,52 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOLUVET - Productos</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="menu.js"></script>
-
-    <style>
-        .producto img {
-            width: 200px; 
-            height: 200px; 
-            object-fit: cover; 
-        }
-
-        .productos-container {
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 20px; 
-            justify-content: center; 
-            align-items: center; 
-            margin: 0 auto; 
-            max-width: 800px; 
-        }
-
-        .producto {
-            text-align: center; 
-            width: 220px; /* Ancho fijo para mantener el diseño */
-        }
-
-        .image-container {
-            display: flex; /* Para centrar la imagen en su contenedor */
-            justify-content: center; /* Centrar horizontalmente */
-            margin-bottom: 10px; /* Espacio debajo de la imagen */
-        }
-
-        .productos-section h2 {
-            text-align: center; 
-            margin-bottom: 20px; 
-        }
-
-        .description {
-            font-size: 14px; /* Ajusta el tamaño de la fuente */
-            color: #555; /* Color de texto gris */
-            margin: 10px 0; /* Margen superior e inferior */
-        }
-
-        header {
-            text-align: center; 
-            padding: 20px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -138,7 +92,7 @@
                 const productoPrice = parseFloat(button.previousElementSibling.textContent.replace('$', ''));
 
                 const producto = {
-                    name: productoName,
+                    name: productoNam,
                     price: productoPrice
                 };
 
@@ -148,4 +102,5 @@
         });
     </script>
 </body>
+    <script src="menu.js"></script>
 </html>
