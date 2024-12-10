@@ -3,24 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOLUVET - Productos</title>
+    <title>Alimentos - SOLUVET</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+
+<header>
     <div class="header-container">
         <div class="logo-container">
             <img src="Img/logo.png" alt="Logo SOLUVET">
             <span class="logo-text">SOLUVET</span>
         </div>
-        <!-- Botón de menú -->
-        <button id="menu-toggle" class="menu-toggle">&#9776;</button>
-        <!-- Menú desplegable -->
-        <div id="nav-menu" class="nav-container">
+        <div class="nav-container">
             <nav>
                 <ul>
                     <li><a href="Index.html" class="button-link">Inicio</a></li>
-                    <li><a href="Alimentos.html" class="button-link">Alimentos</a></li>
                     <li><a href="Medicamentos.html" class="button-link">Medicamentos</a></li>
                     <li><a href="Juguetes.html" class="button-link">Juguetes</a></li>
                     <li><a href="Accesorios.html" class="button-link">Accesorios</a></li>
@@ -31,76 +28,65 @@
     </div>
 </header>
 
-
-    <section class="productos-section">
-        <h2>Productos para Mascotas</h2>
-        <div class="productos-container">
-            <div class="producto">
-                <div class="image-container">
-                    <img src="Img/Alimentos/Premium.png" alt="Producto 1">
-                </div>
-                <h3>Ringo para perro adulto</h3>
-                <p class="description">Un alimento premium para mantener a tu perro saludable y activo.</p>
-                <p class="price">$35000</p>
-                <button class="btn-cart">Agregar al Carrito</button>
+<!-- Sección de Alimentos -->
+<section id="alimentos" class="alimentos-section">
+    <h2>Alimentos para tu Mascota</h2>
+    <div class="productos-container">
+        <div class="producto">
+            <div class="producto-image">
+                <img src="Img/Alimentos/Producto1.jpg" alt="Alimento 1">
             </div>
-            
-            <div class="producto">
-                <div class="image-container">
-                    <img src="Img/Alimentos/Chun.jpg" alt="Producto 2">
-                </div>
-                <h3>Chunky para perro adulto</h3>
-                <p class="description">Ideal para perros con necesidades energéticas altas.</p>
-                <p class="price">$30000</p>
-                <button class="btn-cart">Agregar al Carrito</button>
-            </div>
-            
-            <div class="producto">
-                <div class="image-container">
-                    <img src="Img/Alimentos/Mirri.png" alt="Producto 3">
-                </div>
-                <h3>Mirringo para gato adulto</h3>
-                <p class="description">Nutrición balanceada para gatos de todas las razas.</p>
+            <div class="producto-info">
+                <h3>Alimento Premium para Perros</h3>
+                <p>Alimento balanceado con nutrientes esenciales para el bienestar de tu mascota.</p>
                 <p class="price">$25000</p>
                 <button class="btn-cart">Agregar al Carrito</button>
             </div>
-            
-            <div class="producto">
-                <div class="image-container">
-                    <img src="Img/Alimentos/Cat.jpg" alt="Producto 4">
-                </div>
-                <h3>Cat purina para gato adulto</h3>
-                <p class="description">Sabor irresistible para los gatos más exigentes.</p>
+        </div>
+
+        <div class="producto">
+            <div class="producto-image">
+                <img src="Img/Alimentos/Producto2.jpg" alt="Alimento 2">
+            </div>
+            <div class="producto-info">
+                <h3>Comida Natural para Gatos</h3>
+                <p>Ingredientes naturales que garantizan una dieta sana y deliciosa para tu gato.</p>
+                <p class="price">$22000</p>
+                <button class="btn-cart">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <div class="producto">
+            <div class="producto-image">
+                <img src="Img/Alimentos/Producto3.jpg" alt="Alimento 3">
+            </div>
+            <div class="producto-info">
+                <h3>Alimento Húmedo para Perros</h3>
+                <p>Comida húmeda con sabor irresistible para consentir a tu perro.</p>
                 <p class="price">$28000</p>
                 <button class="btn-cart">Agregar al Carrito</button>
             </div>
         </div>
-    </section>
 
+        <div class="producto">
+            <div class="producto-image">
+                <img src="Img/Alimentos/Producto4.jpg" alt="Alimento 4">
+            </div>
+            <div class="producto-info">
+                <h3>Snacks Naturales para Gatos</h3>
+                <p>Deliciosos snacks naturales para premiar a tu gato.</p>
+                <p class="price">$15000</p>
+                <button class="btn-cart">Agregar al Carrito</button>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <footer>
-         <p>TIENDA VETERINARIA SOLUVET - SOGAMOSO, BOYACA - TELEFONOS 300 200 0000 </p>
-    </footer>
+<!-- Footer -->
+<footer>
+    <p>© 2024 Tienda Veterinaria SOLUVET - SOGAMOSO, BOYACÁ - TEL: 300 200 0000</p>
+</footer>
 
-    <script src="cart.js"></script>
-    <script>
-        const cartButtons = document.querySelectorAll('.btn-cart');
-
-        cartButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const productoName = button.previousElementSibling.previousElementSibling.textContent;
-                const productoPrice = parseFloat(button.previousElementSibling.textContent.replace('$', ''));
-
-                const producto = {
-                    name: productoNam,
-                    price: productoPrice
-                };
-
-                addToCart(producto);
-                alert(`${productoName} ha sido agregado al carrito.`);
-            });
-        });
-    </script>
+<script src="cart.js"></script> <!-- Enlace al archivo JS del carrito -->
 </body>
-    <script src="menu.js"></script>
 </html>
