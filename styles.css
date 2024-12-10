@@ -1,10 +1,10 @@
-/* Estilos generales para el menú */
+/* Estilos generales */
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: green; /* Color verde */
+    background-color: green;
 }
 
 .logo-container {
@@ -13,30 +13,39 @@
 }
 
 .logo-container img {
-    height: 50px; /* Ajustar tamaño del logo */
+    height: 50px;
     margin-right: 10px;
 }
 
 .logo-text {
-    font-size: 20px; /* Tamaño del texto junto al logo */
+    font-size: 20px;
     color: white;
 }
 
+.menu-toggle {
+    display: none; /* Ocultar por defecto */
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
 .nav-container {
-    display: none; /* Ocultar inicialmente en móviles */
-    flex-direction: column; /* Alinear verticalmente para móviles */
+    display: none; /* Ocultar menú inicialmente */
+    flex-direction: column;
+    background-color: green;
     position: absolute;
     top: 60px;
     right: 20px;
-    background-color: green;
     width: 200px;
     border-radius: 5px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 100;
 }
 
 .nav-container.active {
-    display: flex; /* Mostrar menú cuando se active */
+    display: flex; /* Mostrar menú al activar */
 }
 
 .nav-container ul {
@@ -53,7 +62,7 @@
 .nav-container a {
     text-decoration: none;
     color: white;
-    padding: 10px 20px;
+    padding: 10px;
     display: block;
     border-radius: 4px;
     transition: background 0.3s;
@@ -63,40 +72,31 @@
     background-color: orange;
 }
 
-.menu-toggle {
-    display: none; /* Ocultar botón en pantallas grandes */
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-}
-
 /* Pantallas pequeñas */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block; /* Mostrar botón en móviles */
+        display: block; /* Mostrar botón del menú */
     }
     .nav-container {
-        display: none; /* Ocultar menú por defecto */
-        flex-direction: column;
+        display: none; /* Ocultar menú en móviles por defecto */
     }
 }
 
 /* Pantallas grandes */
 @media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* Ocultar botón en pantallas grandes */
+    }
     .nav-container {
-        display: flex; /* Mostrar menú siempre en pantallas grandes */
-        position: static;
+        display: flex; /* Menú siempre visible en grandes */
         flex-direction: row;
+        position: static;
         background: none;
         box-shadow: none;
     }
-
     .nav-container ul {
         display: flex;
     }
-
     .nav-container li {
         margin: 0 10px;
     }
