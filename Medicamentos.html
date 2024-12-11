@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOLUVET - Medicamentos</title>
+    <title>Medicamentos - SOLUVET</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+
+<header>
     <div class="header-container">
         <div class="logo-container">
             <img src="Img/logo.png" alt="Logo SOLUVET">
             <span class="logo-text">SOLUVET</span>
         </div>
-        <!-- Botón del menú -->
-        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
-        <!-- Menú desplegable -->
-        <div id="nav-menu" class="nav-container">
+        <div class="nav-container">
             <nav>
                 <ul>
                     <li><a href="Index.html" class="button-link">Inicio</a></li>
                     <li><a href="Alimentos.html" class="button-link">Alimentos</a></li>
-                    <li><a href="Medicamentos.html" class="button-link">Medicamentos</a></li>
                     <li><a href="Juguetes.html" class="button-link">Juguetes</a></li>
                     <li><a href="Accesorios.html" class="button-link">Accesorios</a></li>
                     <li><a href="Carrito.html" class="button-link">Carro de Compras</a></li>
@@ -31,57 +28,37 @@
     </div>
 </header>
 
-    <section class="medicamentos-section">
-        <h2>Medicamentos para Mascotas</h2>
-        <div class="medicamentos-container">
-            <div class="medicamento">
-                <div class="image-container">
-                    <img src="Img/Medicamentos/Anti.jpg" alt="Antiparasitario">
-                </div>
-                <h3>Antiparasitario</h3>
-                <p class="description">Un antiparasitario eficaz para mantener a tus mascotas saludables.</p>
-                <p class="price">$35000</p>
-                <button class="btn-cart">Agregar al Carrito</button>
-            </div>
-
-            <div class="medicamento">
-                <div class="image-container">
-                    <img src="Img/Medicamentos/Desin.jpg" alt="Desinflamatorio">
-                </div>
-                <h3>Desinflamatorio</h3>
-                <p class="description">Alivio para la inflamación y el dolor.</p>
-                <p class="price">$45000</p>
-                <button class="btn-cart">Agregar al Carrito</button>
-            </div>
-
-            <div class="medicamento">
-                <div class="image-container">
-                    <img src="Img/Medicamentos/Dolor.jpg" alt="Control del Dolor">
-                </div>
-                <h3>Control del Dolor</h3>
-                <p class="description">Control efectivo del dolor para tus mascotas.</p>
-                <p class="price">$30000</p>
-                <button class="btn-cart">Agregar al Carrito</button>
-            </div>
-
-            <div class="medicamento">
-                <div class="image-container">
-                    <img src="Img/Medicamentos/Para.jpg" alt="Antibióticos para gatos">
-                </div>
-                <h3>Antibióticos para gatos</h3>
-                <p class="description">Tratamiento efectivo para infecciones en gatos.</p>
-                <p class="price">$28000</p>
-                <button class="btn-cart">Agregar al Carrito</button>
-            </div>
+<section class="productos-section">
+    <h2>Medicamentos para Mascotas</h2>
+    <div class="productos-container">
+        <div class="producto">
+            <img src="Img/Medicamentos/Dolor.jpg" alt="Medicamento 1">
+            <h3>Antibiótico Canino</h3>
+            <p>Tratamiento efectivo contra infecciones bacterianas.</p>
+            <p class="price">$20,000</p>
+            <button class="btn-cart">Agregar al Carrito</button>
         </div>
-    </section>
+        <div class="producto">
+            <img src="Img/Medicamentos/Desin.jpg" alt="Medicamento 2">
+            <h3>Vitaminas Felinas</h3>
+            <p>Suplemento vitamínico para gatos.</p>
+            <p class="price">$15,000</p>
+            <button class="btn-cart">Agregar al Carrito</button>
+        </div>
+        <div class="producto">
+            <img src="Img/Medicamentos/Para.jpg" alt="Medicamento 3">
+            <h3>Desparasitante</h3>
+            <p>Protección completa contra parásitos internos.</p>
+            <p class="price">$25,000</p>
+            <button class="btn-cart">Agregar al Carrito</button>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        <p>© 2024 ELIANA GARCIA - FASE 2 APLICACIONES MULTIMEDIA</p>
-    </footer>
+<footer>
+    <p>TIENDA VETERINARIA SOLUVET - SOGAMOSO, BOYACÁ - TEL: 311 580 4952</p>
+</footer>
 
-    <script src="cart.js"></script>
+<script src="cart.js"></script>
 </body>
-    <script src="menu.js"></script>
-
 </html>
