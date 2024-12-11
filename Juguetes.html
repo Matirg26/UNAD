@@ -3,26 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOLUVET - Juguetes</title>
+    <title>Juguetes - SOLUVET</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+
+<header>
     <div class="header-container">
         <div class="logo-container">
             <img src="Img/logo.png" alt="Logo SOLUVET">
             <span class="logo-text">SOLUVET</span>
         </div>
-        <!-- Botón del menú -->
-        <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
-        <!-- Menú desplegable -->
-        <div id="nav-menu" class="nav-container">
+        <div class="nav-container">
             <nav>
                 <ul>
                     <li><a href="Index.html" class="button-link">Inicio</a></li>
                     <li><a href="Alimentos.html" class="button-link">Alimentos</a></li>
                     <li><a href="Medicamentos.html" class="button-link">Medicamentos</a></li>
-                    <li><a href="Juguetes.html" class="button-link">Juguetes</a></li>
                     <li><a href="Accesorios.html" class="button-link">Accesorios</a></li>
                     <li><a href="Carrito.html" class="button-link">Carro de Compras</a></li>
                 </ul>
@@ -31,67 +28,37 @@
     </div>
 </header>
 
-
-    <section class="juguetes-section">
-        <h2>Juguetes para Mascotas</h2>
-        <div class="juguetes-container">
-            <div class="juguete">
-                <img src="Img/Juguetes/mord.jpg" alt="Juguete 1">
-                <h3>Pelota de Juego</h3>
-                <p class="description">Una pelota resistente y colorida para horas de diversión.</p>
-                <p class="price">$15000</p>
-                <button class="btn-cart">Agregar al Carrito</button>
-            </div>
-            
-            <div class="juguete">
-                <img src="Img/Juguetes/raton.jpg" alt="Juguete 2">
-                <h3>Ratón de Juguete</h3>
-                <p class="description">Un ratón de felpa para estimular la caza natural de tu gato.</p>
-                <p class="price">$12000</p>
-                <button class="btn-cart">Agregar al Carrito</button>
-            </div>
-            
-            <div class="juguete">
-                <img src="Img/Juguetes/hue.jpg" alt="Juguete 3">
-                <h3>Hueso de goma para Perros</h3>
-                <p class="description">Hueso de plastico resistente y duradero para divertidos juegos al aire libre.</p>
-                <p class="price">$18000</p>
-                <button class="btn-cart">Agregar al Carrito</button>
-            </div>
-            
-            <div class="juguete">
-                <img src="Img/Juguetes/rod.jpg" alt="Juguete 4">
-                <h3>Cuerda de Jugar</h3>
-                <p class="description">Cuerda resistente ideal para jugar a tirar y morder.</p>
-                <p class="price">$16000</p>
-                <button class="btn-cart">Agregar al Carrito</button>
-            </div>
+<section class="productos-section">
+    <h2>Juguetes para Mascotas</h2>
+    <div class="productos-container">
+        <div class="producto">
+            <img src="Img/Juguetes/mord.jpg" alt="Juguete 1">
+            <h3>Pelota de Goma</h3>
+            <p>Resistente y perfecta para juegos al aire libre.</p>
+            <p class="price">$12,000</p>
+            <button class="btn-cart">Agregar al Carrito</button>
         </div>
-    </section>
+        <div class="producto">
+            <img src="Img/Juguetes/hue.jpg" alt="Juguete 2">
+            <h3>Cuerda para Morder</h3>
+            <p>Ideal para fortalecer los dientes de tu perro.</p>
+            <p class="price">$18,000</p>
+            <button class="btn-cart">Agregar al Carrito</button>
+        </div>
+        <div class="producto">
+            <img src="Img/Juguetes/raton.jpg" alt="Juguete 3">
+            <h3>Ratoncito de Felpa</h3>
+            <p>Un juguete divertido para gatos inquietos.</p>
+            <p class="price">$8,000</p>
+            <button class="btn-cart">Agregar al Carrito</button>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        <p>© 2024 ELIANA GARCIA - FASE 2 APLICACIONES MULTIMEDIA</p>
-    </footer>
+<footer>
+    <p>TIENDA VETERINARIA SOLUVET - SOGAMOSO, BOYACÁ - TEL: 311 580 4952</p>
+</footer>
 
-    <script src="cart.js"></script>
-    <script>
-        const cartButtons = document.querySelectorAll('.btn-cart');
-
-        cartButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const jugueteName = button.previousElementSibling.previousElementSibling.textContent;
-                const juguetePrice = parseFloat(button.previousElementSibling.textContent.replace('$', ''));
-
-                const juguete = {
-                    name: jugueteName,
-                    price: juguetePrice
-                };
-
-                addToCart(juguete);
-                alert(`${jugueteName} ha sido agregado al carrito.`);
-            });
-        });
-    </script>
+<script src="cart.js"></script>
 </body>
-<script src="menu.js"></script>
 </html>
