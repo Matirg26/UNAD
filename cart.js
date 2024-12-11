@@ -1,23 +1,27 @@
+// Agregar un producto al carrito
 function addToCart(product) {
-    
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     
-    
-    cart.push(product);
-    
-    
-    localStorage.setItem('cart', JSON.stringify(cart));
+    // Verifica si el producto ya existe
+    const exists = cart.find(item => item.name === product.name);
+    if (exists) {
+        alert(`${product.name} ya está en el carrito.`);
+        return;
+    }
 
-    
+    cart.push(product);
+    localStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
+    alert(`${product.name} agregado al carrito.`);
 }
 
-
+// Renderizar el carrito de compras
 function renderCart() {
     const cartContainer = document.getElementById("cart-container");
     const totalPriceElement = document.getElementById("total-price");
-    
-    
+
+    if (!cartContainer || !totalPriceElement) return; // Si no existen, detener la ejecución
+
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cartContainer.innerHTML = "";
     let total = 0;
@@ -27,61 +31,59 @@ function renderCart() {
         cartItem.className = "cart-item";
         cartItem.innerHTML = `
             <h4>${item.name} - $${item.price.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 2})}</h4>
-            <button onclick="removeFromCart(${index})">Eliminar</button>
+            <button class="btn-remove" data-index="${index}">Eliminar</button>
         `;
         cartContainer.appendChild(cartItem);
         total += item.price;
     });
 
     totalPriceElement.textContent = `$${total.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 2})}`;
-}
 
-
-function removeFromCart(index) {
-    
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-    
-    
-    cart.splice(index, 1);
-    
-    
-    localStorage.setItem('cart', JSON.stringify(cart));
-
-    
-    renderCart();
-}
-
-
-document.addEventListener('DOMContentLoaded', renderCart);
-
-// JavaScript para el carrusel
-let currentIndex = 0;
-const images = document.querySelectorAll('.carousel img');
-const totalImages = images.length;
-
-function showImage(index) {
-    images.forEach((img, i) => {
-        img.classList.remove('active');
-        if (i === index) {
-            img.classList.add('active');
-        }
+    // Asigna eventos de eliminación
+    document.querySelectorAll(".btn-remove").forEach(button => {
+        button.addEventListener("click", function () {
+            removeFromCart(this.getAttribute("data-index"));
+        });
     });
 }
 
-function nextImage() {
-    currentIndex = (currentIndex + 1) % totalImages;
-    showImage(currentIndex);
+// Eliminar un producto del carrito
+function removeFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCart();
 }
 
-function prevImage() {
-    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-    showImage(currentIndex);
-}
+// Carrusel de imágenes
+let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.carousel img');
+    const totalImages = images.length;
+    const nextButton = document.getElementById('next');
+    const prevButton = document.getElementById('prev');
 
-// Cambiar imagen automáticamente cada 5 segundos
-setInterval(nextImage, 5000);
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
+        });
+    }
 
-// Controles manuales
-document.getElementById('next').addEventListener('click', nextImage);
-document.getElementById('prev').addEventListener('click', prevImage);
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showImage(currentIndex);
+    }
 
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showImage(currentIndex);
+    }
+
+    if (images.length > 0) {
+        setInterval(nextImage, 5000); // Cambio automático
+        nextButton?.addEventListener('click', nextImage);
+        prevButton?.addEventListener('click', prevImage);
+    }
+
+    renderCart(); // Renderiza el carrito al cargar la página
+});
